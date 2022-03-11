@@ -1,0 +1,136 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	/*排版*/
+	padding: 0px 5%;
+
+	/*视觉*/
+	background-color: rgba(40, 40, 40, 1);
+
+	/*字体*/
+	color: rgba(255, 255, 255, 1);
+}
+
+header {}
+
+.HeaderTitle {
+	/*排版*/
+	padding: 50px 0px 30px;
+
+	/*视觉*/
+	border-bottom: solid rgba(255, 255, 255, 0.2) 2px;
+}
+
+.Section1 {
+	/*排版*/
+	margin: 10px 0px;
+	height: 50px;
+
+	/*视觉*/
+	border: solid rgba(255, 255, 255, 0.5) 2px;
+	overflow: hidden;
+}
+
+.Section1Title {
+	/*排版*/
+	padding: 10px 10px;
+
+	/*视觉*/
+	background-color: rgba(30, 50, 70, 1);
+	border-bottom: solid rgba(0, 0, 0, 0.2) 2px;
+	cursor: pointer;
+
+	/*不可选中*/
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.Section2 {
+	/*排版*/
+	margin: 10px 5px;
+	margin-right: 0px;
+	height: 45px;
+
+	/*视觉*/
+	border: solid rgba(255, 255, 255, 0.5) 2px;
+	border-right: none;
+	overflow: hidden;
+}
+
+.Section2Title {
+	/*排版*/
+	padding: 10px 10px;
+
+	/*视觉*/
+	background-color: rgba(120, 120, 120, 1);
+	border-bottom: solid rgba(0, 0, 0, 0.2) 2px;
+	cursor: pointer;
+
+	/*不可选中*/
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+article {
+	/*排版*/
+	margin: 10px 5px;
+	margin-right: 0px;
+	height: 40px;
+
+	/*视觉*/
+	border: solid rgba(255, 255, 255, 0.5) 2px;
+	border-right: none;
+	overflow: hidden;
+}
+
+.ArticleTitle {
+	/*排版*/
+	padding: 10px 10px;
+
+	/*视觉*/
+	background-color: rgba(70, 70, 70, 1);
+	cursor: pointer;
+
+	/*不可选中*/
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+p {
+	/*排版*/
+	margin: 0px;
+	padding: 5px 10px;
+
+	/*字体*/
+	line-height: 2em;
+}
+
+img {
+	/*排版*/
+	padding: 0px 10px;
+}
+
+table{
+	/*排版*/
+	margin: 10px 10px;
+	
+	/*视觉*/
+	border: solid rgba(255, 255, 255, 0.8) 1px;
+}
+
+td {
+	/*排版*/
+	padding: 10px;
+	
+	/*视觉*/
+	border: solid rgba(255, 255, 255, 0.8) 1px;
+}

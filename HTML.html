@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!--
+		<meta http-equiv="refresh" content="1">
+		-->
+		<title>HTML开发文档</title>
+		<link rel="stylesheet" type="text/css" href="HTML/css/HTML.css">
+		<script type="text/javascript" src="HTML/js/HTML.js"></script>
+		
+		<script type="text/javascript" src="SyntaxHighlighter/src/shCore.js"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/scripts/shBrushXml.js"></script>
+		<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/styles/shCoreRDark.css" />
+		<script type="text/javascript">
+			SyntaxHighlighter.all();
+		</script>
+	</head>
+	<body>
+
+		<header>
+			<h1 class="HeaderTitle">HTML开发文档</h1>
+		</header>
+
+		<h2 class="Section1Title" style="background-color: inherit;" onclick="SwitchFold(this)">模板</h2>
+		<section class="Section1">
+			<h2 class="Section1Title" onclick="SwitchFold(this)">Section1</h2>
+
+			<section class="Section2">
+				<h3 class="Section2Title" onclick="SwitchFold(this)">■ Section2</h3>
+
+				<article>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● Article</h3>
+
+						<p>
+							Paragraph
+						</p>
+						<script type="syntaxhighlighter" class="brush: xml">
+							<![CDATA[
+							]]>
+						</script>
+
+				</article>
+
+			</section>
+		</section>
+
+		<HR align=center color=#bebebe SIZE=2px>
+		<br />
+		<br />
+
+		<section class="Section1">
+			<h2 class="Section1Title" onclick="SwitchFold(this)">HTML 元素</h2>
+
+			<section class="Section2">
+				<h3 class="Section2Title" onclick="SwitchFold(this)">■ 排版</h3>
+				<article>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● html 文档</h3>
+						<p>
+							HTML5语义元素
+						</p>
+						<img src="HTML/img/HTML_Layout.png" />
+				</article>
+				<article>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● body 主体</h3>
+						<p>
+							无
+						</p>
+				</article>
+				<article>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● section 节</h3>
+						<p>
+							定义文档中的节
+						</p>
+				</article>
+				<article>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● header 页眉</h3>
+						<p>
+							定义文档或节的页眉
+						</p>
+				</article>
+				<article>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● main 主内容</h3>
+						<p>
+							定义文档的主内容
+						</p>
+				</article>
+				<article>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● footer 页脚</h3>
+						<p>
+							定义文档或节的页脚
+						</p>
+				</article>
+				<article>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● nav 导航栏</h3>
+						<p>
+							定义文档内的导航链接
+						</p>
+				</article>
+				<article>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● aside 侧栏</h3>
+						<p>
+							定义页面内容之外的内容
+						</p>
+				</article>
+			</section>
+			<section class="Section2">
+				<h3 class="Section2Title" onclick="SwitchFold(this)">■ 功能</h3>
+				<article>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● a 超链接</h3>
+						<script type="syntaxhighlighter" class="brush: xml">
+							<![CDATA[
+							<a href="http://www.w3school.com.cn">W3School</a>]]>
+						</script>
+				</article>
+				<article>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● table 表格</h3>
+						<script type="syntaxhighlighter" class="brush: xml">
+							<![CDATA[
+							<table border="1">
+							  <tr>
+							    <td>Month</td>
+							    <td>Savings</td>
+							  </tr>
+							  <tr>
+							    <td>January</td>
+							    <td>$100</td>
+							  </tr>
+							</table>]]>
+						</script>
+				</article>
+			</section>
+		</section>
+	</body>
+</html>
