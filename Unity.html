@@ -49,8 +49,42 @@
 		<br />
 		<br />
 
+		<h2 class="Section1Title" style="background-color: inherit;" onclick="SwitchFold(this)">Unity编辑器</h2>
 		<section class="Section1">
-			<h2 class="Section1Title" onclick="SwitchFold(this)">Unity编程</h2>
+			<h2 class="Section1Title" onclick="SwitchFold(this)">Unity组件</h2>
+
+			<section class="Section2">
+				<h3 class="Section2Title" onclick="SwitchFold(this)">■ Animator 动画控制器</h3>
+
+				<article>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● Apply Root Motion（应用根节点运动）</h3>
+						<p>
+							1、没有骨骼根节点时：比如只是一个Cube立方体，如果勾选了ApplyRootMotion，运行后不会播放动画，因为应用了骨骼根节点的运动参数，而没有骨骼根节点，就没有动画了。即便是在代码中强行调用Animator.Play("rotation")方法也不会播放动画。
+						</p>
+
+						<p>
+							2、有骨骼根节点时：一旦设置了这个变量为true，那么请一定注意，这个会对物理引擎在模拟对象的运动轨迹时产生直接的影响，例如在某个动画A中，对象只向Y轴方向进行了移动，在X和Z轴是静止的，那么我们在播放A动画的时候，如果使用Rigidbody设置速度或者施加外力，还是不会让物体在X和Z轴上发生位移的。这是因为，在整个动画播放的过程中（例如0.5秒），Animator会根据动画中物体的位移信息对物体的速度进行赋值，这样达到使用骨骼根节点的位移的效果，也就是说，我在播放动画过程中的任意时间给物体设置了X或者Z轴方向上的运动速度，后续的动画播放帧中，速度又会被Animator强制赋值为跟动画文件中的位移信息一致。
+						</p>
+				</article>
+
+				<article>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● Culling Mode（剔除模式）</h3>
+						<p>
+							1、Always Animate（始终处于动态）：即使在屏幕外也不进行剔除<br />
+							2、Cull Update Transforms（剔除更新变换）：当渲染器不可见时，将禁用变换的重定目标、IK和写入<br />
+							3、Cull Completely（完全剔除）：当渲染器不可见时，动画将完全禁用<br />
+						</p>
+				</article>
+			</section>
+		</section>
+
+		<HR align=center color=#bebebe SIZE=2px>
+		<br />
+		<br />
+
+		<h2 class="Section1Title" style="background-color: inherit;" onclick="SwitchFold(this)">Unity编程</h2>
+		<section class="Section1">
+			<h2 class="Section1Title" onclick="SwitchFold(this)">C# 脚本基础</h2>
 
 			<section class="Section2">
 				<h3 class="Section2Title" onclick="SwitchFold(this)">■ C#基础</h3>
@@ -450,7 +484,7 @@
 							Input.GetAxis("Mouse Y");
 							Input.GetAxis("Mouse ScrollWheel");]]>
 						</script>
-						
+
 						<p>
 							2、鼠标点击
 						</p>
@@ -475,7 +509,7 @@
 							Input.GetAxis("Vertical");
 							Input.GetAxis("Horizontal");]]>
 						</script>
-						
+
 						<p>
 							2、键盘按键
 						</p>
@@ -516,36 +550,24 @@
 		</section>
 
 		<section class="Section1">
-			<h2 class="Section1Title" onclick="SwitchFold(this)">Component 组件</h2>
+			<h2 class="Section1Title" onclick="SwitchFold(this)">编辑器扩展</h2>
 
 			<section class="Section2">
-				<h3 class="Section2Title" onclick="SwitchFold(this)">■ Animator 动画控制器</h3>
+				<h3 class="Section2Title" onclick="SwitchFold(this)">■ 序列化</h3>
 
 				<article>
-					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● Apply Root Motion（应用根节点运动）</h3>
-						<p>
-							1、没有骨骼根节点时：比如只是一个Cube立方体，如果勾选了ApplyRootMotion，运行后不会播放动画，因为应用了骨骼根节点的运动参数，而没有骨骼根节点，就没有动画了。即便是在代码中强行调用Animator.Play("rotation")方法也不会播放动画。
-						</p>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● 作用</h3>
 
 						<p>
-							2、有骨骼根节点时：一旦设置了这个变量为true，那么请一定注意，这个会对物理引擎在模拟对象的运动轨迹时产生直接的影响，例如在某个动画A中，对象只向Y轴方向进行了移动，在X和Z轴是静止的，那么我们在播放A动画的时候，如果使用Rigidbody设置速度或者施加外力，还是不会让物体在X和Z轴上发生位移的。这是因为，在整个动画播放的过程中（例如0.5秒），Animator会根据动画中物体的位移信息对物体的速度进行赋值，这样达到使用骨骼根节点的位移的效果，也就是说，我在播放动画过程中的任意时间给物体设置了X或者Z轴方向上的运动速度，后续的动画播放帧中，速度又会被Animator强制赋值为跟动画文件中的位移信息一致。
+							1、默认地，Unity只给自定义的公有变量、继承自MonoBehaviour的类执行序列化，所以如果想让一个类序列化，那么就要指定[Serializable]标签。它将MetaData放入可以通过反射重新获取并由Unity使用的类中。有了这个Unity知道它应该/可以序列化类。
 						</p>
+						<p>
+							2、Unity序列化的关键字是 Serializable 和 SerializeField，具体描述可以翻阅API。
+						</p>
+
 				</article>
 
-				<article>
-					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● Culling Mode（剔除模式）</h3>
-						<p>
-							1、Always Animate（始终处于动态）：即使在屏幕外也不进行剔除<br />
-							2、Cull Update Transforms（剔除更新变换）：当渲染器不可见时，将禁用变换的重定目标、IK和写入<br />
-							3、Cull Completely（完全剔除）：当渲染器不可见时，动画将完全禁用<br />
-						</p>
-				</article>
 			</section>
-		</section>
-
-		<section class="Section1">
-			<h2 class="Section1Title" onclick="SwitchFold(this)">Inspector 扩展</h2>
-
 			<section class="Section2">
 				<h3 class="Section2Title" onclick="SwitchFold(this)">■ Attribute 属性</h3>
 
@@ -690,6 +712,60 @@
 						</script>
 
 				</article>
+			</section>
+			<section class="Section2">
+				<h3 class="Section2Title" onclick="SwitchFold(this)">■ EditorGUI</h3>
+
+				<article>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● EditorGUI与EditorGUILayout</h3>
+
+						<p>
+							GUI类是固定布局，GUILayout类是自动布局，每种都有自己的排列控件。
+						</p>
+						<p>
+							具体区别参考GUI - GUI基础 - GUI与GUILayout
+						</p>
+
+				</article>
+				<article>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● EditorGUI与GUI</h3>
+
+						<p>
+							大多数 EditorGUI 和 EditorGUILayout GUI 控件已具有与 SerializedProperty 配合使用的重载。 <br />
+							但是，对于不处理 SerializedProperty 的 GUI 控件，您可以按以下所示示例将它们封装到 BeginProperty 和 EndProperty 中。 <br />
+							您也可以将其用于自己的自定义 GUI 控件。
+						</p>
+
+				</article>
+
+			</section>
+		</section>
+
+		<section class="Section1">
+			<h2 class="Section1Title" onclick="SwitchFold(this)">GUI</h2>
+
+			<section class="Section2">
+				<h3 class="Section2Title" onclick="SwitchFold(this)">■ GUI基础</h3>
+
+				<article>
+					<h4 class="ArticleTitle" onclick="SwitchFold(this)">● GUI与GUILayout</h3>
+
+						<p>
+							1、GUI类是固定布局，GUILayout类是自动布局，每种都有自己的排列控件。
+						</p>
+						<p>
+							2、GUI主要是组，组是固定布局模式中的布局规则。<br />
+							● 为定义组中包含的控件，需要使用 GUI.BeginGroup() 和 GUI.EndGroup()函数。<br />
+							● 组内的所有控件将根据组的左上角而不是屏幕的左上角进行定位。因此，如果在运行时重新定位组，则将保持组中所有控件的相对位置。
+						</p>
+						<p>
+							3、GUILayout主要是区域，区域仅用于自动布局模式。<br />
+							● 为定义区域中包含的控件，需要使用 GUILayout.BeginArea() 和 GUILayout.EndArea()函数。<br />
+							● 在自动布局模式下，不需要在控制级别定义绘制控件的屏幕区域。控件将自动放置在包含该控件的区域的最左上角。此区域可能是指屏幕。此外也可以创建手动定位的区域。
+						</p>
+
+				</article>
+
 			</section>
 		</section>
 	</body>

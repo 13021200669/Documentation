@@ -40,7 +40,6 @@ header {}
 
 	/*视觉*/
 	background-color: rgba(30, 50, 70, 1);
-	border-bottom: solid rgba(0, 0, 0, 0.2) 2px;
 	cursor: pointer;
 
 	/*不可选中*/
@@ -68,7 +67,6 @@ header {}
 
 	/*视觉*/
 	background-color: rgba(120, 120, 120, 1);
-	border-bottom: solid rgba(0, 0, 0, 0.2) 2px;
 	cursor: pointer;
 
 	/*不可选中*/
